@@ -13,5 +13,15 @@ namespace GoalLineStandPrototype.Controllers
         {
             return View();
         }
+
+        public ActionResult NewGame()
+        {
+            return View();
+        }
+
+        public ActionResult SelectTeam()
+        {
+            return View();
+        }
     }
 }

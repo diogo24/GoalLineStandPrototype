@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "NewGame";
+    Layout = "~/Views/Shared/_GLSLayout.cshtml";
+}
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 div-margin-large-top-bottom">
+                <h1>New Game Settings</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Salary Cap</h1>
+                <div class="btn-group">
+                    <button class="btn btn-default">Off - No Cap</button>
+                    <button class="btn btn-default">Basic Cap</button>
+                    <button class="btn btn-success">NFL Style Cap</button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Injury Level</h1>
+                <div class="btn-group">
+                    <button class="btn btn-default">0 No Injuries</button>
+                    <button class="btn btn-default">50 Half Normal</button>
+                    <button class="btn btn-success">100 NFL normal</button>
+                    <button class="btn btn-default">200 Double Injuries</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Draft Settings</h1>
+                <div>
+                    <h3>Live Draft</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-default">Able to be paused</button>
+                        <button class="btn btn-success">Fully live - No pausing</button>
+                    </div>
+                </div>
+                <div>
+                    <h3>Quick Draft</h3>
+                    <div class="btn-group">
+                        <label>Set time limit for picks (in minutes)</label>
+                        <input type="number" value="10" />
+                    </div>
+                </div>
+                <div>
+                    <h3>Sim Draft</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-default">Sim completely</button>
+                        <button class="btn btn-success">Sim to player</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>AI Settings</h1>
+                <div>
+                    <h3>Trade AI</h3>
+                </div>
+                <div>
+                    <h3>Evaluate Player AI</h3>
+                    <div class="btn-group">
+                        <button class="btn btn-default">Values Veterans</button>
+                        <button class="btn btn-default">Values Rookies</button>
+                        <button class="btn btn-default">Values Draft Picks</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 div-margin-large-top-bottom">
+                <div class="pull-right">
+                    <a href="@Url.Action("SelectTeam", "GLSHome")" class="btn btn-primary">Continue - Choose Team</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
