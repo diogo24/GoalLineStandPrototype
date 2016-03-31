@@ -1,5 +1,6 @@
 ﻿@{ 
-    var controllerName = "GLSHome";
+    var controllerName         = "GLSHome";
+    var contractControllerName = "PlayerContract";
 }
 
 <!DOCTYPE html>
@@ -27,6 +28,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", controllerName)</li>
+                    <li>@Html.ActionLink("Player Contract", "Index", contractControllerName)</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

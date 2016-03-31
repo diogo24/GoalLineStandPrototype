@@ -1,0 +1,47 @@
+﻿@using System.Globalization
+@model IEnumerable<GoalLineStandPrototype.Models.Player>
+
+@{
+    ViewBag.Title = "Index";
+    Layout        = "~/Views/Shared/_GLSLayout.cshtml";
+}
+
+<h2>Player Contracts</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Position
+            </th>
+            <th>
+                Team
+            </th>
+            <th>
+                Total Value
+            </th>
+            <th>
+                Total Guaranteed
+            </th>
+            <th>
+                Guaranteed %
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.PlayerName</td>
+                <td>@item.Position</td>
+                <td>@item.Team</td>
+                <td>@item.CurrentContract.TotalValue</td>
+                <td>@item.CurrentContract.Guaranteed</td>
+                <td>@item.CurrentContract.GuaranteedPct</td>
+            </tr>
+        }
+    </tbody>
+</table>
