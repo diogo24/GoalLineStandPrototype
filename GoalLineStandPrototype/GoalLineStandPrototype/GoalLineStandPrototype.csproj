@@ -182,6 +182,7 @@
     <Compile Include="Models\PlayerContractModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="Utils\IncentivesHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -251,6 +252,7 @@
     <Content Include="Views\GLSHome\NewGame.cshtml" />
     <Content Include="Views\GLSHome\SelectTeam.cshtml" />
     <Content Include="Views\PlayerContract\Index.cshtml" />
+    <Content Include="Views\PlayerContract\New.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

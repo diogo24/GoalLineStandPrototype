@@ -118,5 +118,27 @@ namespace GoalLineStandPrototype.Controllers
             }
             playersContracts.Add(player);
         }
+
+        //public ActionResult Details()
+        //{
+        //    return View();
+        //}
+
+        //public ActionResult Edit()
+        //{
+        //    return View();
+        //}
+
+        public ActionResult New(string playerName, string teamName)
+        {
+            var model = new PlayerContractDetails()
+            {
+                Player = new Player { PlayerName = playerName, Team = teamName },
+                Team   = new Team { Name = teamName }
+            };
+
+            return View(model);
+        }
+
     }
 }
