@@ -73,6 +73,7 @@
         </div>
 
         @* Player Incentives *@
+        <h3>Player Incentives</h3>
         <table class="table" id="Player_Incentives_Table">
             <thead>
                 <tr>
@@ -94,8 +95,34 @@
         </table>
 
         @* Team Incentives *@
-                
+        <h3>Team Incentives</h3>
+        <table class="table" id="Team_Incentives_Table">
+            <thead>
+                <tr>
+                    <th>Incentive Name</th>
+                    <th>Incentive Milestone</th>
+                    <th>Incentive Bonus</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <th>@Html.DropDownList("TeamIncentives.Code", IncentivesHelper.GetAllTeamIncentives().AsEnumerable(), "--Select option--")</th>
+                    <th>@Html.TextBox("TeamIncentives.Milestone", 0, new { type = "Numeric" })</th>
+                    <th>@Html.TextBox("TeamIncentives.Bonus", 0, new { type = "Numeric" })</th>
+                    <th><button id="Add_Team_Incentive" class="btn btn-success">Add Incentive</button></th>
+                </tr>
+            </thead>
+            <tbody id="Team_Incentives_Table_Body"></tbody>
+        </table> 
         @* HONORS AND RECOGNIZED MEDIA *@
+
+
+        @* Salary Cap Hit *@
+        <div class="form-group">
+            @Html.Label("SalaryCap", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10" id="Salary_Cap">
+                @Html.Display("SalaryCap", new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
@@ -113,6 +140,7 @@
     <script type="text/javascript">
         $(function () {
             $('#Add_Player_Incentive').click(addPlayerIncentive);
+            $('#Add_Team_Incentive').click(addTeamIncentive);
         });
 
         function addPlayerIncentive(e) {
@@ -126,6 +154,19 @@
             tr.append("<td>" + playerIncentiveMilestone + "</td>");
             tr.append("<td>" + playerIncentiveBonus + "</td>");
             var body = $('#Player_Incentives_Table_Body').append(tr);
+        }
+
+        function addTeamIncentive(e) {
+            e.preventDefault();
+            var teamIncentiveCode      = $('#TeamIncentives_Code').val();
+            var teamIncentiveMilestone = $('#TeamIncentives_Milestone').val();
+            var teamIncentiveBonus     = $('#TeamIncentives_Bonus').val();
+
+            var tr = $("<tr></tr>");
+            tr.append("<td>" + teamIncentiveCode + "</td>");
+            tr.append("<td>" + teamIncentiveMilestone + "</td>");
+            tr.append("<td>" + teamIncentiveBonus + "</td>");
+            var body = $('#Team_Incentives_Table_Body').append(tr);
         }
     </script>
 }
